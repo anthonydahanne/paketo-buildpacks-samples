@@ -92,7 +92,8 @@ function builder::pull() {
   name="${1}"
 
   util::print::title "Pulling latest builder..."
-  docker pull "${name}"
+  # Allow local builder
+  #docker pull "${name}"
 }
 
 function image::pull::lifecycle() {
