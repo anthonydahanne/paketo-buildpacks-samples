@@ -109,10 +109,10 @@ func testDistZipWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 						Execute(name, source)
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Gradle")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for DistZip")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for CA Certificates")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Gradle")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for DistZip")))
 
 					container, err = docker.Container.Run.
 						WithPublish("8080").

@@ -99,11 +99,11 @@ func testMavenWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 
 					Eventually(container).Should(BeAvailable())
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Maven")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Executable JAR")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Spring Boot")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Native Image")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Maven")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Executable JAR")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Spring Boot")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Native Image")))
 
 					Eventually(container).Should(Serve(ContainSubstring("UP")).OnPort(8080).WithEndpoint("/actuator/health"))
 				})

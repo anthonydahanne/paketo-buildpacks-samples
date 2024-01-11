@@ -99,10 +99,10 @@ func testWARWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 						Execute(name, source)
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Maven")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Apache Tomcat")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for CA Certificates")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Maven")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Apache Tomcat")))
 
 					container, err = docker.Container.Run.
 						WithPublish("8080").

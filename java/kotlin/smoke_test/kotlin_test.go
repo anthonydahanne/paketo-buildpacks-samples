@@ -103,11 +103,11 @@ func testKotlinWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 						Execute(name, source)
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Gradle")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Executable JAR")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Spring Boot")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for CA Certificates")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Gradle")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Executable JAR")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Spring Boot")))
 
 					container, err = docker.Container.Run.
 						WithPublish("8080").

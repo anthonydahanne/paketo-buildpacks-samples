@@ -94,10 +94,10 @@ func testQuarkusWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 						Execute(name, source)
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Maven")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Executable JAR")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Native Image")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Maven")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Executable JAR")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Native Image")))
 
 					container, err = docker.Container.Run.
 						WithEnv(map[string]string{"PORT": "8080"}).

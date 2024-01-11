@@ -109,13 +109,13 @@ func testMavenNodeWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Yarn")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Node Engine")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Maven")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Executable JAR")))
-					Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Spring Boot")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for CA Certificates")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Yarn")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Node Engine")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Maven")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Executable JAR")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Spring Boot")))
 
 					container, err = docker.Container.Run.
 						WithPublish("8080").
