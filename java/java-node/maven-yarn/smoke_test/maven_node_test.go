@@ -106,13 +106,12 @@ func testMavenNodeWithBuilder(builder string) func(*testing.T, spec.G, spec.S) {
 							"BP_JVM_VERSION":       "17",
 							"BP_JAVA_INSTALL_NODE": "true"}).
 						Execute(name, source)
-
 					Expect(err).ToNot(HaveOccurred(), logs.String)
 
 					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for CA Certificates")))
 					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for BellSoft Liberica")))
-					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Yarn")))
-					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Node Engine")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Yarn Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Node Engine Buildpack")))
 					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Maven")))
 					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Executable JAR")))
 					Expect(logs).To(ContainLines(ContainSubstring("Tanzu Buildpack for Spring Boot")))
